@@ -1,24 +1,27 @@
+/* IMPORTAR FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
 /* RESET E TIPOGRAFIA */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif; /* fonte mais moderna e delicada */
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 body {
-    background-color: #ffe6f0; /* rosa clarinho de fundo */
-    color: #4d0033; /* tom de rosa escuro para o texto */
+    background-color: #ffe6f2; /* rosa clarinho */
+    color: #4d0033; /* rosa escuro */
 }
 
 /* CABEÇALHO */
 header {
-    background-color: #ff66a3; /* rosa vivo */
+    background-color: #ff66b2; /* rosa vivo */
     color: white;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255, 102, 178, 0.4);
 }
 
 nav {
@@ -37,70 +40,69 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 16px;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #ffe6f0; /* efeito suave no hover */
-    text-shadow: 1px 1px 2px #ffb3d9;
+    color: #ffe6f2;
+    text-shadow: 1px 1px 2px #ff99cc;
 }
 
 /* BANNER */
 .banner {
-    background-image: url('https://images.unsplash.com/photo-1606788075761-4ff31d9f6eb4?auto=format&fit=crop&w=1600&q=80'); /* nova imagem fofa */
+    background-image: url('https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff0f5; /* rosa clarinho para o texto */
+    color: #fff0f5;
     text-align: center;
-    text-shadow: 2px 2px 6px #ffb3d9;
+    text-shadow: 2px 2px 5px #ffb3d9;
 }
 
 .banner h1 {
-    font-size: 45px;
-    font-family: 'Dancing Script', cursive; /* título mais fofo e curvilíneo */
-    background-color: rgba(255, 182, 193, 0.5); /* rosa transparente */
-    padding: 15px 25px;
-    border-radius: 20px;
-    border: 2px dashed #ffb6c1; /* detalhe delicado */
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;
+    background-color: rgba(255, 182, 193, 0.5);
+    padding: 15px 30px;
+    border-radius: 25px;
+    border: 2px dashed #ff99cc;
     letter-spacing: 1px;
 }
 
 .banner button {
-    margin-top: 20px;
-    padding: 12px 25px;
+    margin-top: 25px;
+    padding: 14px 30px;
     border: none;
-    background-color: #ff99c8;
+    background-color: #ff99cc;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 4px 6px rgba(255,105,180,0.4);
+    box-shadow: 0 5px 15px rgba(255, 102, 178, 0.4);
 }
 
 .banner button:hover {
-    background-color: #ff66a3;
+    background-color: #ff66b2;
     transform: scale(1.05);
 }
 
 /* SEÇÕES */
 section {
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
 section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #ff3399; /* rosa vibrante */
     font-family: 'Dancing Script', cursive;
-    font-size: 30px;
+    font-size: 32px;
     text-shadow: 1px 1px 2px #ffb3d9;
 }
 
@@ -108,54 +110,54 @@ section h2 {
 .cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 .card {
-    background-color: #fff0f5;
-    padding: 20px;
-    width: 250px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(255,182,193,0.3);
+    background-color: #ffe6f2;
+    padding: 25px;
+    width: 260px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
     transition: 0.3s;
-    border: 1px solid #ffb6c1;
+    border: 1px solid #ff99cc;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(255,105,180,0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(255, 105, 180, 0.5);
 }
 
 /* FORMULÁRIO */
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 320px;
     margin: auto;
-    gap: 15px;
+    gap: 18px;
 }
 
 input, textarea {
     padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ffb6c1;
+    border-radius: 12px;
+    border: 1px solid #ff99cc;
     background-color: #fff0f5;
     color: #4d0033;
     font-weight: 500;
 }
 
 input::placeholder, textarea::placeholder {
-    color: #ff66a3;
+    color: #ff66b2;
     font-style: italic;
 }
 
 form button {
-    background-color: #ff66a3;
+    background-color: #ff66b2;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
@@ -168,12 +170,12 @@ form button:hover {
 
 /* RODAPÉ */
 footer {
-    background-color: #ff66a3;
+    background-color: #ff66b2;
     color: white;
     text-align: center;
-    padding: 20px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    padding: 25px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -190,8 +192,8 @@ footer {
     }
 
     .banner h1 {
-        font-size: 28px;
-        padding: 10px 20px;
+        font-size: 32px;
+        padding: 12px 25px;
     }
 
     form {
