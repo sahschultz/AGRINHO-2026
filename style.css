@@ -199,29 +199,8 @@ footer {
     form {
         width: 90%;
     }
-/* CENTRALIZAR FAQ */
-#faq {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-/* CARDS DO FAQ EM COLUNA */
-#faq .card {
-    width: 60%;
-    max-width: 500px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-#faq h3 {
-    cursor: pointer;
-    color: #ff3399;
-}
 
-#faq h3:hover {
-    text-shadow: 1px 1px 3px #ffb3d9;
-}
-    
 
 
 /* ROLAGEM SUAVE */
