@@ -3,104 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro forte, futuro sustentável</title>
+    <title>Agro Sustentável 🌸</title>
 
-    <!-- CSS EXTERNO -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
-    <header>
-        <nav>
-            <h2>🌸 Agro Sustentável</h2>
+<header>
+    <nav>
+        <h2>🌸 Agro Sustentável</h2>
 
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#producao">Produção</a></li>
-                <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-                <li><a href="#desafios">Desafios</a></li>
-                <li><a href="#futuro">Futuro</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#producao">Produção</a></li>
+            <li><a href="#curiosidades">Curiosidades</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- BANNER -->
-    <section class="banner" id="home">
-        <h1>🌷 Agro forte, futuro sustentável 🌷</h1>
+<!-- BANNER -->
+<section class="banner" id="home">
+    <h1>🌷 Agro forte, futuro sustentável 🌷</h1>
 
-        <button onclick="document.getElementById('producao').scrollIntoView({behavior:'smooth'})">
-            Saiba mais ✨
-        </button>
-    </section>
+    <button onclick="mostrarMensagem()">Clique para uma surpresa 💗</button>
+</section>
 
-    <!-- PRODUÇÃO -->
-    <section id="producao">
-        <h2>🌱 Produção Agrícola</h2>
-        <p>
-            O agronegócio é essencial para a economia e utiliza tecnologias modernas para aumentar a produção com mais eficiência e cuidado com o planeta 💗
-        </p>
-    </section>
+<!-- PRODUÇÃO -->
+<section id="producao">
+    <h2>🌱 Produção Agrícola</h2>
+    <p>
+        O agronegócio utiliza tecnologia para aumentar a produção e reduzir impactos ambientais 🌿
+    </p>
 
-    <!-- SUSTENTABILIDADE -->
-    <section id="sustentabilidade">
-        <h2>🌿 Sustentabilidade</h2>
+    <p id="contador">
+        🌸 Plantas protegidas até agora: <span id="numero">0</span>
+    </p>
 
-        <div class="cards">
+    <button onclick="aumentarContador()">Aumentar impacto positivo 💚</button>
+</section>
 
-            <div class="card">
-                <h3>🌸 Solo saudável</h3>
-                <p>Preservação dos nutrientes e menos erosão.</p>
-            </div>
+<!-- CURIOSIDADES -->
+<section id="curiosidades">
+    <h2>✨ Curiosidades do Agro</h2>
 
-            <div class="card">
-                <h3>💧 Água consciente</h3>
-                <p>Uso inteligente da água no campo.</p>
-            </div>
+    <div class="cards">
 
-            <div class="card">
-                <h3>☀️ Energia limpa</h3>
-                <p>Fontes renováveis e sustentáveis.</p>
-            </div>
-
+        <div class="card">
+            <h3>🌽 Sabia disso?</h3>
+            <p>O Brasil é um dos maiores exportadores de alimentos do mundo 🌎</p>
         </div>
-    </section>
 
-    <!-- DESAFIOS -->
-    <section id="desafios">
-        <h2>🌎 Desafios Ambientais</h2>
-        <p>
-            Desmatamento, poluição e uso excessivo de recursos ainda são desafios importantes que precisam de soluções sustentáveis 🌿
+        <div class="card">
+            <h3>🚜 Tecnologia</h3>
+            <p>Drones ajudam a monitorar plantações em tempo real 📡</p>
+        </div>
+
+        <div class="card">
+            <h3>🌿 Sustentabilidade</h3>
+            <p>A agricultura regenerativa melhora o solo naturalmente 💚</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <h2>💬 Perguntas Frequentes</h2>
+
+    <div class="card">
+        <h3 onclick="toggle('q1')">🌸 O que é agricultura sustentável?</h3>
+        <p id="q1" style="display:none;">
+            É o uso consciente dos recursos naturais para produzir sem destruir o meio ambiente.
         </p>
-    </section>
+    </div>
 
-    <!-- FUTURO -->
-    <section id="futuro">
-        <h2>🚜 Futuro do Agro</h2>
-        <p>
-            Tecnologias como drones, agricultura inteligente e inovação ajudam a construir um futuro mais verde e eficiente ✨
+    <div class="card">
+        <h3 onclick="toggle('q2')">💧 Por que economizar água?</h3>
+        <p id="q2" style="display:none;">
+            Porque a água é essencial para a vida e pode acabar se usada sem controle.
         </p>
-    </section>
+    </div>
 
-    <!-- CONTATO -->
-    <section id="contato">
-        <h2>💌 Contato</h2>
+    <div class="card">
+        <h3 onclick="toggle('q3')">🌱 O agro pode ser sustentável?</h3>
+        <p id="q3" style="display:none;">
+            Sim! Com tecnologia e boas práticas, ele pode proteger o meio ambiente.
+        </p>
+    </div>
+</section>
 
-        <form>
-            <input type="text" placeholder="Seu nome 🌸">
-            <input type="email" placeholder="Seu e-mail 💌">
-            <textarea rows="5" placeholder="Sua mensagem ✨"></textarea>
-            <button type="submit">Enviar 💗</button>
-        </form>
-    </section>
+<!-- CONTATO -->
+<section id="contato">
+    <h2>💌 Contato</h2>
 
-    <!-- RODAPÉ -->
-    <footer>
-        <p>🌸 Produzir hoje, cuidar do amanhã 💗</p>
-        <p>Projeto educativo sobre sustentabilidade no agronegócio ✨</p>
-    </footer>
+    <form>
+        <input type="text" placeholder="Seu nome 🌸">
+        <input type="email" placeholder="Seu e-mail 💌">
+        <textarea rows="5" placeholder="Sua mensagem ✨"></textarea>
+        <button type="submit">Enviar 💗</button>
+    </form>
+</section>
+
+<footer>
+    <p>🌸 Produzir hoje, cuidar do amanhã 💗</p>
+</footer>
+
+<!-- JAVASCRIPT INTERATIVO -->
+<script>
+    let contador = 0;
+
+    function aumentarContador() {
+        contador++;
+        document.getElementById("numero").innerText = contador;
+    }
+
+    function toggle(id) {
+        let elemento = document.getElementById(id);
+        if (elemento.style.display === "none") {
+            elemento.style.display = "block";
+        } else {
+            elemento.style.display = "none";
+        }
+    }
+
+    function mostrarMensagem() {
+        alert("🌸 Você está ajudando a construir um futuro mais sustentável! 💗");
+    }
+</script>
 
 </body>
 </html>
