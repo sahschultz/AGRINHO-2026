@@ -3,19 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif; /* fonte mais moderna e delicada */
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #ffe6f0; /* rosa clarinho de fundo */
+    color: #4d0033; /* tom de rosa escuro para o texto */
 }
 
 /* CABEÇALHO */
 header {
-    background-color: #2e7d32;
+    background-color: #ff66a3; /* rosa vivo */
     color: white;
     padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 nav {
@@ -33,12 +36,19 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffe6f0; /* efeito suave no hover */
+    text-shadow: 1px 1px 2px #ffb3d9;
 }
 
 /* BANNER */
 .banner {
-    background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80');
+    background-image: url('https://images.unsplash.com/photo-1606788075761-4ff31d9f6eb4?auto=format&fit=crop&w=1600&q=80'); /* nova imagem fofa */
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -46,31 +56,38 @@ nav a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #fff0f5; /* rosa clarinho para o texto */
     text-align: center;
+    text-shadow: 2px 2px 6px #ffb3d9;
 }
 
 .banner h1 {
     font-size: 45px;
-    background-color: rgba(0,0,0,0.5);
-    padding: 10px;
-    border-radius: 10px;
+    font-family: 'Dancing Script', cursive; /* título mais fofo e curvilíneo */
+    background-color: rgba(255, 182, 193, 0.5); /* rosa transparente */
+    padding: 15px 25px;
+    border-radius: 20px;
+    border: 2px dashed #ffb6c1; /* detalhe delicado */
+    letter-spacing: 1px;
 }
 
 .banner button {
     margin-top: 20px;
     padding: 12px 25px;
     border: none;
-    background-color: #66bb6a;
+    background-color: #ff99c8;
     color: white;
     font-size: 16px;
-    border-radius: 8px;
+    font-weight: bold;
+    border-radius: 15px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(255,105,180,0.4);
 }
 
 .banner button:hover {
-    background-color: #388e3c;
+    background-color: #ff66a3;
+    transform: scale(1.05);
 }
 
 /* SEÇÕES */
@@ -81,7 +98,10 @@ section {
 
 section h2 {
     margin-bottom: 20px;
-    color: #2e7d32;
+    color: #ff3399; /* rosa vibrante */
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    text-shadow: 1px 1px 2px #ffb3d9;
 }
 
 /* CARDS */
@@ -93,17 +113,18 @@ section h2 {
 }
 
 .card {
-    background-color: white;
+    background-color: #fff0f5;
     padding: 20px;
     width: 250px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255,182,193,0.3);
     transition: 0.3s;
+    border: 1px solid #ffb6c1;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(255,105,180,0.4);
 }
 
 /* FORMULÁRIO */
@@ -116,31 +137,44 @@ form {
 }
 
 input, textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ffb6c1;
+    background-color: #fff0f5;
+    color: #4d0033;
+    font-weight: 500;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #ff66a3;
+    font-style: italic;
 }
 
 form button {
-    background-color: #2e7d32;
+    background-color: #ff66a3;
     color: white;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
+    font-weight: bold;
     transition: 0.3s;
 }
 
 form button:hover {
-    background-color: #388e3c;
+    background-color: #ff3399;
+    transform: scale(1.05);
 }
 
 /* RODAPÉ */
 footer {
-    background-color: #1b5e20;
+    background-color: #ff66a3;
     color: white;
     text-align: center;
     padding: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* RESPONSIVIDADE */
@@ -156,7 +190,8 @@ footer {
     }
 
     .banner h1 {
-        font-size: 30px;
+        font-size: 28px;
+        padding: 10px 20px;
     }
 
     form {
