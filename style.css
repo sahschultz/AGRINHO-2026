@@ -1,49 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
 
+/* RESET FORTE */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    background: linear-gradient(180deg, #ffe6f2, #fff0f5);
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(180deg, #ffe6f2, #fff7fb);
     color: #4d0033;
+    overflow-x: hidden;
 }
 
-/* LOADING */
-#loading {
-    position: fixed;
-    inset: 0;
-    background: #ff66b2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.loader {
-    color: white;
-    font-size: 20px;
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    50% { transform: scale(1.1); }
-}
-
-/* HEADER */
+/* ================= HEADER MODERNO ================= */
 header {
-    background: #ff66b2;
-    padding: 15px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
+    background: #ff4da6;
+    padding: 15px 20px;
     z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
 nav {
@@ -54,81 +33,151 @@ nav {
 
 nav h2 {
     color: white;
+    font-family: "Dancing Script", cursive;
+    font-size: 28px;
 }
 
+/* MENU */
 nav ul {
     display: flex;
-    list-style: none;
     gap: 15px;
+    list-style: none;
 }
 
-nav a {
-    color: white;
+nav ul li a {
     text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
 }
 
-/* HERO */
+nav ul li a:hover {
+    background: white;
+    color: #ff4da6;
+}
+
+/* MENU MOBILE ICON */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
 .hero {
-    height: 500px;
+    margin-top: 80px;
+    height: 80vh;
     background: url('https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg') center/cover;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    color: white;
 }
 
 .hero-content {
-    background: rgba(255, 102, 178, 0.5);
-    padding: 30px;
+    background: rgba(255, 77, 166, 0.7);
+    padding: 40px;
     border-radius: 20px;
+    color: white;
+    max-width: 600px;
 }
 
-/* SEÇÕES */
+.hero h1 {
+    font-size: 40px;
+    font-family: "Dancing Script", cursive;
+}
+
+/* BOTÃO */
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #ff4da6;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ================= SEÇÕES ================= */
 section {
-    padding: 60px 20px;
-    text-align: center;
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
 }
 
-/* CARDS */
+/* TITULOS */
+h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* ================= IMAGEM CONTROLADA ================= */
+.img-section {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* ================= CARDS ================= */
 .cards {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .card {
-    background: #ffe6f2;
-    padding: 20px;
-    width: 250px;
-    border-radius: 15px;
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
 }
 
 .card img {
     width: 100%;
-    border-radius: 10px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
-/* FLASHCARDS */
+/* ================= FLASHCARDS ================= */
 .flashcards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .flashcard {
-    width: 200px;
-    height: 150px;
+    width: 220px;
+    height: 160px;
     perspective: 1000px;
 }
 
 .inner {
     width: 100%;
     height: 100%;
-    position: relative;
+    transition: 0.8s;
     transform-style: preserve-3d;
-    transition: 0.6s;
+    position: relative;
 }
 
 .flashcard.virado .inner {
@@ -139,60 +188,26 @@ section {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    text-align: center;
+    backface-visibility: hidden;
+    padding: 10px;
 }
 
 .front {
-    background: #ff99cc;
+    background: #ff4da6;
     color: white;
 }
 
 .back {
-    background: #fff0f5;
+    background: white;
     transform: rotateY(180deg);
 }
 
-/* GALERIA */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-}
-
-.galeria img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* FAQ */
-.resposta {
-    display: none;
-}
-
-/* FORM */
-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-    gap: 10px;
-}
-
-/* FOOTER */
-footer {
-    background: #ff66b2;
-    color: white;
-    padding: 20px;
-}
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
+/* ================= GALERIA (AGORA CORRIGIDA) ================= */
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -201,8 +216,8 @@ img {
 
 .galeria img {
     width: 100%;
-    height: 180px;       /* 👈 ISSO resolve o problema */
-    object-fit: cover;   /* 👈 corta bonito sem distorcer */
+    height: 200px;
+    object-fit: cover;
     border-radius: 15px;
     transition: 0.3s;
 }
@@ -210,16 +225,48 @@ img {
 .galeria img:hover {
     transform: scale(1.05);
 }
-.img-section {
-    width: 100%;
-    max-width: 700px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 20px;
-    margin: 20px auto;
-    display: block;
+
+/* ================= FAQ ================= */
+.faq {
+    cursor: pointer;
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-section {
-    max-width: 1200px;
+
+.resposta {
+    display: none;
+    padding: 10px;
+}
+
+/* ================= FORM ================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
     margin: auto;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
 }
