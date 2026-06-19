@@ -1,7 +1,7 @@
-/* IMPORTAR FONTES */
+/* FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
 
-/* RESET E TIPOGRAFIA */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +10,14 @@
     transition: all 0.3s ease;
 }
 
+/* FUNDO */
 body {
-    background-color: #ffe6f2;
+    background: linear-gradient(180deg, #ffe6f2, #fff0f5);
     color: #4d0033;
+    line-height: 1.6;
 }
 
-/* CABEÇALHO */
+/* HEADER */
 header {
     background-color: #ff66b2;
     color: white;
@@ -23,6 +25,10 @@ header {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     box-shadow: 0 5px 15px rgba(255, 102, 178, 0.4);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
@@ -58,8 +64,8 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff0f5;
     text-align: center;
+    color: #fff0f5;
     text-shadow: 2px 2px 5px #ffb3d9;
 }
 
@@ -87,6 +93,7 @@ nav a:hover {
 .banner button:hover {
     background-color: #ff66b2;
     transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 102, 178, 0.3);
 }
 
 /* SEÇÕES */
@@ -95,6 +102,7 @@ section {
     text-align: center;
 }
 
+/* TÍTULOS */
 section h2 {
     margin-bottom: 25px;
     color: #ff3399;
@@ -120,8 +128,8 @@ section h2 {
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(255, 105, 180, 0.5);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.35);
 }
 
 /* FORMULÁRIO */
@@ -160,6 +168,12 @@ form button:hover {
     transform: scale(1.05);
 }
 
+/* FAQ */
+.resposta {
+    display: none;
+    margin-top: 10px;
+}
+
 /* RODAPÉ */
 footer {
     background-color: #ff66b2;
@@ -170,7 +184,19 @@ footer {
     border-top-right-radius: 20px;
 }
 
-/* RESPONSIVIDADE */
+/* ANIMAÇÃO SCROLL */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -192,7 +218,7 @@ footer {
     }
 }
 
-/* ROLAGEM SUAVE */
+/* SCROLL SUAVE */
 html {
     scroll-behavior: smooth;
 }
