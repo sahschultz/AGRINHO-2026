@@ -7,16 +7,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
+    transition: all 0.3s ease;
 }
 
 body {
-    background-color: #ffe6f2; /* rosa clarinho */
-    color: #4d0033; /* rosa escuro */
+    background-color: #ffe6f2;
+    color: #4d0033;
 }
 
 /* CABEÇALHO */
 header {
-    background-color: #ff66b2; /* rosa vivo */
+    background-color: #ff66b2;
     color: white;
     padding: 20px;
     border-bottom-left-radius: 20px;
@@ -40,7 +41,6 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
 }
 
 nav a:hover {
@@ -70,7 +70,6 @@ nav a:hover {
     padding: 15px 30px;
     border-radius: 25px;
     border: 2px dashed #ff99cc;
-    letter-spacing: 1px;
 }
 
 .banner button {
@@ -83,8 +82,6 @@ nav a:hover {
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(255, 102, 178, 0.4);
 }
 
 .banner button:hover {
@@ -100,10 +97,9 @@ section {
 
 section h2 {
     margin-bottom: 25px;
-    color: #ff3399; /* rosa vibrante */
+    color: #ff3399;
     font-family: 'Dancing Script', cursive;
     font-size: 32px;
-    text-shadow: 1px 1px 2px #ffb3d9;
 }
 
 /* CARDS */
@@ -120,7 +116,6 @@ section h2 {
     width: 260px;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
-    transition: 0.3s;
     border: 1px solid #ff99cc;
 }
 
@@ -144,12 +139,10 @@ input, textarea {
     border: 1px solid #ff99cc;
     background-color: #fff0f5;
     color: #4d0033;
-    font-weight: 500;
 }
 
 input::placeholder, textarea::placeholder {
     color: #ff66b2;
-    font-style: italic;
 }
 
 form button {
@@ -160,7 +153,6 @@ form button {
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 form button:hover {
@@ -176,7 +168,6 @@ footer {
     padding: 25px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* RESPONSIVIDADE */
@@ -199,9 +190,7 @@ footer {
     form {
         width: 90%;
     }
-
-
-
+}
 
 /* ROLAGEM SUAVE */
 html {
