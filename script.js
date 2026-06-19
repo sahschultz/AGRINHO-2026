@@ -1,72 +1,248 @@
-document.addEventListener("DOMContentLoaded", () => {
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
 
-    /* ===================== CONTADOR ===================== */
-    let contador = 0;
-    const numero = document.getElementById("numero");
-    const btnContador = document.getElementById("btnContador");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    if (btnContador) {
-        btnContador.addEventListener("click", () => {
-            contador++;
-            numero.innerText = contador;
+html {
+    scroll-behavior: smooth;
+}
 
-            // pequeno efeito visual
-            numero.style.transform = "scale(1.3)";
-            numero.style.color = "#ff3399";
+body {
+    background: linear-gradient(180deg, #ffe6f2, #fff0f5);
+    color: #4d0033;
+    line-height: 1.6;
+}
 
-            setTimeout(() => {
-                numero.style.transform = "scale(1)";
-            }, 200);
-        });
-    }
+/* ================= HEADER ================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ff66b2;
+    padding: 15px 20px;
+    box-shadow: 0 6px 20px rgba(255, 102, 178, 0.3);
+}
 
-    /* ===================== BOTÃO SURPRESA ===================== */
-    const btnSurpresa = document.getElementById("btnSurpresa");
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-    if (btnSurpresa) {
-        btnSurpresa.addEventListener("click", () => {
-            alert("🌸 Você está ajudando a construir um futuro mais sustentável!");
-        });
-    }
+nav h2 {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+}
 
-    /* ===================== FAQ INTERATIVO ===================== */
-    document.querySelectorAll(".faq").forEach(item => {
-        item.addEventListener("click", () => {
-            const id = item.dataset.id;
-            const resposta = document.getElementById(id);
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-            if (resposta.style.display === "block") {
-                resposta.style.display = "none";
-            } else {
-                resposta.style.display = "block";
-            }
-        });
-    });
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    /* ===================== FLASHCARDS ===================== */
-    document.querySelectorAll(".flashcard").forEach(card => {
-        card.addEventListener("click", () => {
-            card.classList.toggle("virado");
-        });
-    });
+/* ================= HERO ================= */
+.hero {
+    height: 520px;
+    background: url('https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
 
-    /* ===================== ANIMAÇÃO AO ROLAR ===================== */
-    const elementos = document.querySelectorAll("section");
+.hero-content {
+    background: rgba(255, 102, 178, 0.45);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+}
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-                entry.target.style.transition = "0.8s ease";
-            }
-        });
-    }, { threshold: 0.2 });
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 44px;
+}
 
-    elementos.forEach(el => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(40px)";
-        observer.observe(el);
-    });
+/* ================= BOTÕES ================= */
+button {
+    margin-top: 12px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    background: #ff99cc;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-});
+button:hover {
+    transform: scale(1.05);
+    background: #ff4da6;
+}
+
+/* ================= SEÇÕES ================= */
+section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+/* IMAGENS PADRÃO */
+.img-section {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    border-radius: 18px;
+    background: #ffe6f2;
+    border: 1px solid #ff99cc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
+}
+
+/* ================= FLASHCARDS ================= */
+.flashcards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.flashcard {
+    width: 220px;
+    height: 160px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flashcard.virado .inner {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    backface-visibility: hidden;
+}
+
+.front {
+    background: #ff99cc;
+    color: white;
+    font-weight: bold;
+}
+
+.back {
+    background: #ffe6f2;
+    transform: rotateY(180deg);
+}
+
+/* ================= GALERIA ================= */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= FAQ ================= */
+.resposta {
+    display: none;
+    margin-top: 10px;
+}
+
+/* ================= FORM ================= */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: auto;
+    gap: 12px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ff99cc;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #ff66b2;
+    color: white;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* ================= ANIMAÇÃO SCROLL ================= */
+section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+section.ativo {
+    opacity: 1;
+    transform: translateY(0);
+}
