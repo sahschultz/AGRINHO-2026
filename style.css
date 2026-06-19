@@ -1,16 +1,17 @@
-/* FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
 }
 
-/* FUNDO */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(180deg, #ffe6f2, #fff0f5);
     color: #4d0033;
@@ -19,16 +20,12 @@ body {
 
 /* HEADER */
 header {
-    background-color: #ff66b2;
-    color: white;
-    padding: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 5px 15px rgba(255, 102, 178, 0.4);
-
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: #ff66b2;
+    padding: 18px;
+    box-shadow: 0 6px 20px rgba(255, 102, 178, 0.3);
 }
 
 nav {
@@ -37,10 +34,15 @@ nav {
     align-items: center;
 }
 
+nav h2 {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 18px;
 }
 
 nav a {
@@ -49,65 +51,41 @@ nav a {
     font-weight: 600;
 }
 
-nav a:hover {
-    color: #ffe6f2;
-    text-shadow: 1px 1px 2px #ff99cc;
-}
-
 /* BANNER */
 .banner {
-    background-image: url('https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-    background-size: cover;
-    background-position: center;
-    height: 450px;
+    height: 500px;
+    background: url('https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg') center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff0f5;
-    text-shadow: 2px 2px 5px #ffb3d9;
+    color: white;
 }
 
 .banner h1 {
     font-size: 50px;
+    background: rgba(255, 102, 178, 0.4);
+    padding: 15px;
+    border-radius: 20px;
     font-family: 'Dancing Script', cursive;
-    background-color: rgba(255, 182, 193, 0.5);
-    padding: 15px 30px;
-    border-radius: 25px;
-    border: 2px dashed #ff99cc;
 }
 
 .banner button {
-    margin-top: 25px;
-    padding: 14px 30px;
+    margin-top: 20px;
+    padding: 14px 28px;
     border: none;
-    background-color: #ff99cc;
+    border-radius: 25px;
+    background: #ff99cc;
     color: white;
-    font-size: 18px;
     font-weight: bold;
-    border-radius: 20px;
     cursor: pointer;
-}
-
-.banner button:hover {
-    background-color: #ff66b2;
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 102, 178, 0.3);
 }
 
 /* SEÇÕES */
 section {
     padding: 60px 20px;
     text-align: center;
-}
-
-/* TÍTULOS */
-section h2 {
-    margin-bottom: 25px;
-    color: #ff3399;
-    font-family: 'Dancing Script', cursive;
-    font-size: 32px;
 }
 
 /* CARDS */
@@ -119,53 +97,11 @@ section h2 {
 }
 
 .card {
-    background-color: #ffe6f2;
-    padding: 25px;
     width: 260px;
+    padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+    background: #ffe6f2;
     border: 1px solid #ff99cc;
-}
-
-.card:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.35);
-}
-
-/* FORMULÁRIO */
-form {
-    display: flex;
-    flex-direction: column;
-    width: 320px;
-    margin: auto;
-    gap: 18px;
-}
-
-input, textarea {
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid #ff99cc;
-    background-color: #fff0f5;
-    color: #4d0033;
-}
-
-input::placeholder, textarea::placeholder {
-    color: #ff66b2;
-}
-
-form button {
-    background-color: #ff66b2;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-form button:hover {
-    background-color: #ff3399;
-    transform: scale(1.05);
 }
 
 /* FAQ */
@@ -174,51 +110,74 @@ form button:hover {
     margin-top: 10px;
 }
 
-/* RODAPÉ */
-footer {
-    background-color: #ff66b2;
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: auto;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ff99cc;
+}
+
+/* FLASHCARDS */
+.flashcards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.flashcard {
+    width: 220px;
+    height: 160px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flashcard .inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flashcard.virado .inner {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    padding: 10px;
+}
+
+.front {
+    background: #ff99cc;
     color: white;
-    text-align: center;
-    padding: 25px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    font-weight: bold;
 }
 
-/* ANIMAÇÃO SCROLL */
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
+.back {
+    background: #ffe6f2;
+    transform: rotateY(180deg);
 }
 
-.aparecer {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.8s ease;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .banner h1 {
-        font-size: 32px;
-        padding: 12px 25px;
-    }
-
-    form {
-        width: 90%;
-    }
-}
-
-/* SCROLL SUAVE */
-html {
-    scroll-behavior: smooth;
+/* FOOTER */
+footer {
+    background: #ff66b2;
+    color: white;
+    padding: 20px;
 }
