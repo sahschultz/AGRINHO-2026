@@ -1,141 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+/* ================= HERO ================= */
 
-/* RESET FORTE */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(180deg, #ffe6f2, #fff7fb);
-    color: #4d0033;
-    overflow-x: hidden;
-}
-
-/* ================= HEADER MODERNO ================= */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #ff4da6;
-    padding: 15px 20px;
-    z-index: 1000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-nav {
+.hero {
+    margin-top: 80px;
+    min-height: 80vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-nav h2 {
-    color: white;
-    font-family: "Dancing Script", cursive;
-    font-size: 28px;
-}
-
-/* MENU */
-nav ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    background: white;
-    color: #ff4da6;
-}
-
-/* MENU MOBILE ICON */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-}
-
-/* ================= HERO ================= */
-.hero {
-    margin-top: 80px;
-    height: 80vh;
-    background: url('https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    gap: 40px;
+    padding: 60px 40px;
+    background: linear-gradient(180deg, #ffe6f2, #fff7fb);
+    flex-wrap: wrap;
 }
 
 .hero-content {
-    background: rgba(255, 77, 166, 0.7);
+    flex: 1;
+    background: rgba(255, 77, 166, 0.75);
     padding: 40px;
     border-radius: 20px;
     color: white;
-    max-width: 600px;
+    max-width: 550px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .hero h1 {
     font-size: 40px;
     font-family: "Dancing Script", cursive;
+    margin-bottom: 15px;
 }
 
-/* BOTÃO */
-button {
-    margin-top: 15px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 25px;
-    background: white;
-    color: #ff4da6;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-button:hover {
-    transform: scale(1.05);
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* ================= SEÇÕES ================= */
-section {
-    padding: 80px 20px;
-    max-width: 1100px;
-    margin: auto;
+.hero-image img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.20);
 }
+/* ================= IMAGEM DA SEÇÃO SOBRE ================= */
 
-/* TITULOS */
-h2 {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-/* ================= IMAGEM CONTROLADA ================= */
 .img-section {
     width: 100%;
-    max-width: 800px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 20px;
+    max-width: 750px;
+    height: auto;
     display: block;
-    margin: 20px auto;
+    margin: 30px auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
+/* ================= IMAGEM DA SEÇÃO SOBRE ================= */
 
 /* ================= CARDS ================= */
+
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 20px;
 }
 
@@ -143,8 +73,9 @@ h2 {
     background: white;
     border-radius: 20px;
     padding: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    transition: .3s;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -153,120 +84,94 @@ h2 {
 
 .card img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
     border-radius: 15px;
+    margin-bottom: 10px;
 }
 
-/* ================= FLASHCARDS ================= */
-.flashcards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+.card h3 {
+    margin-bottom: 10px;
+    color: #ff4da6;
 }
+/* ================= GALERIA ================= */
 
-.flashcard {
-    width: 220px;
-    height: 160px;
-    perspective: 1000px;
-}
-
-.inner {
-    width: 100%;
-    height: 100%;
-    transition: 0.8s;
-    transform-style: preserve-3d;
-    position: relative;
-}
-
-.flashcard.virado .inner {
-    transform: rotateY(180deg);
-}
-
-.front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    backface-visibility: hidden;
-    padding: 10px;
-}
-
-.front {
-    background: #ff4da6;
-    color: white;
-}
-
-.back {
-    background: white;
-    transform: rotateY(180deg);
-}
-
-/* ================= GALERIA (AGORA CORRIGIDA) ================= */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
     gap: 15px;
 }
 
 .galeria img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     border-radius: 15px;
-    transition: 0.3s;
+    transition: .4s;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
 }
 
 .galeria img:hover {
     transform: scale(1.05);
 }
+/* ================= ANIMAÇÃO ================= */
 
-/* ================= FAQ ================= */
-.faq {
-    cursor: pointer;
-    background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .8s ease;
 }
 
-.resposta {
-    display: none;
-    padding: 10px;
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
 }
-
-/* ================= FORM ================= */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: auto;
-}
-
-input, textarea {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
 /* ================= RESPONSIVO ================= */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
+
+@media (max-width:768px){
+
+    nav ul{
+        display:none;
     }
 
-    .menu-toggle {
-        display: block;
+    .menu-toggle{
+        display:block;
     }
 
-    .hero h1 {
-        font-size: 28px;
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:40px 20px;
     }
+
+    .hero-content{
+        max-width:100%;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero-image img{
+        max-width:100%;
+    }
+
+    .img-section{
+        max-width:100%;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .galeria{
+        grid-template-columns:1fr;
+    }
+
+    .flashcards{
+        flex-direction:column;
+        align-items:center;
+    }
+
 }
