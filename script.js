@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* MENU MOBILE */
+        /* MENU MOBILE */
     const menu = document.getElementById("menu");
     document.querySelector(".menu-toggle").addEventListener("click", () => {
         menu.classList.toggle("ativo");
