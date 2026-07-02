@@ -1,308 +1,204 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(180deg, #ffe6f2, #fff7fb);
-    color: #4d0033;
-    overflow-x: hidden;
+body{
+    font-family:Poppins,sans-serif;
+    background:linear-gradient(180deg,#ffd6ea,#fff0f7);
+    color:#5c0038;
 }
 
-/* ================= HEADER ================= */
-/* ================= HEADER ================= */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #ff4da6;
-    padding: 15px 20px;
-    z-index: 1000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+#loading{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#ff4da6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    color:white;
+    font-size:30px;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:#ff4da6;
+    padding:15px;
+    z-index:1000;
 }
 
-nav h2 {
-    color: white;
-    font-family: "Dancing Script", cursive;
-    font-size: 28px;
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-nav ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
+nav h2{
+    color:white;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 20px;
-    transition: 0.3s;
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
 }
 
-nav ul li a:hover {
-    background: white;
-    color: #ff4da6;
+nav a{
+    color:white;
+    text-decoration:none;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
+.menu-toggle{
+    display:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
 }
 
-/* ================= HERO (CORRIGIDO COM IMAGEM IA) ================= */
-.hero {
-    margin-top: 80px;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    background:
-        linear-gradient(rgba(255, 77, 166, 0.55), rgba(255, 77, 166, 0.55)),
-        url("assets/banner-ia.jpg") center/cover no-repeat;
+.hero{
+    margin-top:70px;
+    height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(rgba(255,77,166,.5),rgba(255,77,166,.5)),
+    url("assets/banner-ia.jpg") center/cover;
 }
 
-.hero-content {
-    background: rgba(255, 77, 166, 0.75);
-    padding: 40px;
-    border-radius: 20px;
-    color: white;
-    max-width: 600px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+.hero-content{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(8px);
+    padding:40px;
+    border-radius:20px;
+    color:white;
 }
 
-.hero h1 {
-    font-size: 40px;
-    font-family: "Dancing Script", cursive;
+section{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
 }
 
-.hero p {
-    margin-top: 10px;
+h2{
+    text-align:center;
+    margin-bottom:20px;
 }
 
-/* BOTÕES */
-button {
-    margin-top: 15px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 25px;
-    background: white;
-    color: #ff4da6;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:20px;
+    background:#ff4da6;
+    color:white;
+    cursor:pointer;
 }
 
-button:hover {
-    transform: scale(1.05);
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-/* ================= SEÇÕES ================= */
-section {
-    padding: 80px 20px;
-    max-width: 1100px;
-    margin: auto;
+.card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
 }
 
-h2 {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 30px;
+.card img{
+    width:100%;
+    border-radius:15px;
 }
 
-/* ================= IMAGEM SOBRE ================= */
-.img-section {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    margin: 25px auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+.flashcards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-/* ================= CARDS ================= */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.flashcard{
+    width:220px;
+    height:160px;
+    perspective:1000px;
 }
 
-.card {
-    background: white;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    transition: 0.3s;
+.inner{
+    width:100%;
+    height:100%;
+    transition:.8s;
+    transform-style:preserve-3d;
+    position:relative;
 }
 
-.card:hover {
-    transform: translateY(-8px);
+.flashcard.virado .inner{
+    transform:rotateY(180deg);
 }
 
-.card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 15px;
+.front,.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    border-radius:15px;
+    backface-visibility:hidden;
 }
 
-/* ================= FLASHCARDS ================= */
-.flashcards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+.front{
+    background:#ff4da6;
+    color:white;
 }
 
-.flashcard {
-    width: 220px;
-    height: 160px;
-    perspective: 1000px;
+.back{
+    background:white;
+    transform:rotateY(180deg);
 }
 
-.inner {
-    width: 100%;
-    height: 100%;
-    transition: 0.8s;
-    transform-style: preserve-3d;
-    position: relative;
+.resposta{
+    display:none;
 }
 
-.flashcard.virado .inner {
-    transform: rotateY(180deg);
+.fade-in{
+    opacity:0;
+    transform:translateY(20px);
+    transition:.8s;
 }
 
-.front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    backface-visibility: hidden;
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-.front {
-    background: #ff4da6;
-    color: white;
-}
-
-.back {
-    background: white;
-    transform: rotateY(180deg);
-}
-
-/* ================= GALERIA ================= */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-}
-
-.galeria img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: 0.3s;
-}
-
-.galeria img:hover {
-    transform: scale(1.05);
-}
-
-/* ================= FAQ ================= */
-.faq {
-    cursor: pointer;
-    background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.resposta {
-    display: none;
-    padding: 10px;
-}
-
-/* ================= FORM ================= */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: auto;
-}
-
-input, textarea {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
-/* ================= ANIMAÇÃO ================= */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ================= RESPONSIVO ================= */
-@media (max-width: 768px) {
-
-    nav ul {
-        display: none;
+@media(max-width:768px){
+    nav ul{
+        display:none;
+        flex-direction:column;
+        background:#ff4da6;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:100%;
+        padding:20px;
     }
 
-    .menu-toggle {
-        display: block;
+    #menu.ativo{
+        display:flex;
     }
 
-    .hero-content {
-        padding: 25px;
-        max-width: 90%;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .galeria {
-        grid-template-columns: 1fr;
-    }
-
-    .flashcards {
-        flex-direction: column;
-        align-items: center;
+    .menu-toggle{
+        display:block;
     }
 }
