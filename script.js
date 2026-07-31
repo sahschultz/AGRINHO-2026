@@ -58,33 +58,55 @@ modo.addEventListener("click", () => {
 
 const numeros = document.querySelectorAll(".numero");
 
-numeros.forEach(numero => {
+function animarContadores() {
 
-    const objetivo = +numero.dataset.numero;
+    numeros.forEach(numero => {
 
-    let atual = 0;
+        const alvo = Number(numero.getAttribute("data-numero"));
 
-    const incremento = objetivo / 120;
+        let valor = 0;
 
-    const atualizar = () => {
+        const tempo = 30;
 
-        atual += incremento;
+        const incremento = Math.ceil(alvo / 100);
 
-        if(atual < objetivo){
+        const contador = setInterval(() => {
 
-            numero.innerText = Math.floor(atual);
+            valor += incremento;
 
-            requestAnimationFrame(atualizar);
+            if (valor >= alvo) {
 
-        }else{
+                numero.innerText = alvo.toLocaleString("pt-BR");
 
-            numero.innerText = objetivo;
+                clearInterval(contador);
 
-        }
+            } else {
 
-    };
+                numero.innerText = valor.toLocaleString("pt-BR");
 
-    atualizar();
+            }
+
+        }, tempo);
+
+    });
+
+}
+
+let iniciou = false;
+
+window.addEventListener("scroll", () => {
+
+    const secao = document.getElementById("dados");
+
+    const posicao = secao.getBoundingClientRect().top;
+
+    if (posicao < window.innerHeight && !iniciou) {
+
+        iniciou = true;
+
+        animarContadores();
+
+    }
 
 });
 
