@@ -1,54 +1,163 @@
-document.addEventListener("DOMContentLoaded", () => {
+// ==========================
+// BOTÃO VOLTAR AO TOPO
+// ==========================
 
-    window.addEventListener("load", () => {
-        setTimeout(() => {
-            document.getElementById("loading").style.display = "none";
-        }, 1000);
+const botaoTopo = document.getElementById("topo");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 300) {
+
+        botaoTopo.style.display = "block";
+
+    } else {
+
+        botaoTopo.style.display = "none";
+
+    }
+
+});
+
+botaoTopo.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
     });
 
-    const menu = document.getElementById("menu");
-    document.querySelector(".menu-toggle").addEventListener("click", () => {
-        menu.classList.toggle("ativo");
+});
+
+// ==========================
+// MODO ESCURO
+// ==========================
+
+const modo = document.getElementById("modoEscuro");
+
+modo.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+
+        modo.innerHTML = "☀️";
+
+    }else{
+
+        modo.innerHTML = "🌙";
+
+    }
+
+});
+
+// ==========================
+// CONTADORES
+// ==========================
+
+const numeros = document.querySelectorAll(".numero");
+
+numeros.forEach(numero => {
+
+    const objetivo = +numero.dataset.numero;
+
+    let atual = 0;
+
+    const incremento = objetivo / 120;
+
+    const atualizar = () => {
+
+        atual += incremento;
+
+        if(atual < objetivo){
+
+            numero.innerText = Math.floor(atual);
+
+            requestAnimationFrame(atualizar);
+
+        }else{
+
+            numero.innerText = objetivo;
+
+        }
+
+    };
+
+    atualizar();
+
+});
+
+// ==========================
+// QUIZ
+// ==========================
+
+const respostas = document.querySelectorAll(".resposta");
+
+const resultado = document.getElementById("resultadoQuiz");
+
+respostas.forEach(botao => {
+
+    botao.addEventListener("click", () => {
+
+        if(botao.dataset.correta === "true"){
+
+            resultado.innerHTML = "🎉 Parabéns! Você acertou!";
+
+            resultado.style.color = "#3CB371";
+
+        }else{
+
+            resultado.innerHTML = "❌ Resposta incorreta. Tente novamente!";
+
+            resultado.style.color = "#FF4F7A";
+
+        }
+
     });
 
-    let contador = 0;
-    document.getElementById("btnContador").addEventListener("click", () => {
-        contador++;
-        document.getElementById("numero").innerText = contador;
+});
+
+// ==========================
+// ANIMAÇÃO DOS CARDS
+// ==========================
+
+const cards = document.querySelectorAll(".card");
+
+const aparecer = () => {
+
+    cards.forEach(card => {
+
+        const posicao = card.getBoundingClientRect().top;
+
+        if(posicao < window.innerHeight - 100){
+
+            card.style.opacity = "1";
+
+            card.style.transform = "translateY(0)";
+
+        }
+
     });
 
-    document.getElementById("btnSurpresa").addEventListener("click", () => {
-        alert("🌸 Você faz parte do futuro sustentável!");
-    });
+};
 
-    document.querySelectorAll(".faq").forEach(item => {
-        item.addEventListener("click", () => {
-            const id = item.dataset.id;
-            const resposta = document.getElementById(id);
+window.addEventListener("scroll", aparecer);
 
-            resposta.style.display =
-                resposta.style.display === "block" ? "none" : "block";
-        });
-    });
+aparecer();
 
-    document.querySelectorAll(".flashcard").forEach(card => {
-        card.addEventListener("click", () => {
-            card.classList.toggle("virado");
-        });
-    });
+// ==========================
+// FORMULÁRIO
+// ==========================
 
-    const imagens = document.querySelectorAll(".fade-in");
+const formulario = document.querySelector("form");
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-        });
-    }, {
-        threshold: 0.2
-    });
+formulario.addEventListener("submit", function(e){
 
-    imagens.forEach(img => observer.observe(img));
+    e.preventDefault();
+
+    alert("🌸 Obrigado pela sua mensagem!");
+
+    formulario.reset();
 
 });
